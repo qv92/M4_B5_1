@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: blogHead">
+
+<body>
+<!-----XÓa cái này điiiiiiiiiiiiiiiiiiii-->
+<header th:replace="/layout :: blogHeader"></header>
+<!-----XÓa cái này điiiiiiiiiiiiiiiiiiii-->
+
+<div class="main-wrapper">
+	<form method="post" enctype="multipart/form-data" th:object="${blog}" novalidate>
+
+		<article class="blog-post px-3 py-5 p-md-5">
+			<div class="container">
+				<header class="blog-post-header">
+					<h2 class="title mb-2">Sửa blog thôi</h2>
+					<input type="hidden" name="id" th:field="*{id}">
+					<label style="margin-right: 20px;">Title:</label><input type="text" th:field="*{title}">
+					<div class="meta mb-3"><label style="margin-right: 20px;">Author: </label><input type="text" th:field="*{author}"></div>
+					<div class="meta mb-3"><label style="margin-right: 20px;">Posted Time: </label><input type="date" th:field="*{postDate}"></div>
+				</header>
+
+				<div class="blog-post-body">
+					<figure class="blog-banner">
+						<input type="text" th:field="*{img}" hidden>
+						<input type="file" name="blogImg">
+					</figure>
+					<textarea name="" cols="120" rows="25" th:field="*{content}"></textarea>
+					<div class="meta mb-3"><input type="submit" value="Save"></div>
+				</div>
+			</div><!--//container-->
+		</article>
+	</form>
+
+	<!--------------XÓA CÁI NÀY ĐIIIIIIIIIIIIIIIIIII-->
+	<footer th:replace="/layout :: blogFooter"></footer>
+
+</div><!--//main-wrapper-->
+
+
+<!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->
+
+
+
+<!-- Javascript -->
+
+
+</body>
+</html> 
+

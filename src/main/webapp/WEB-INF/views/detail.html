@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: blogHead">
+
+<body>
+    <!-----XÓa cái này điiiiiiiiiiiiiiiiiiii-->
+	<header th:replace="/layout :: blogHeader"></header>
+	  <!-----XÓa cái này điiiiiiiiiiiiiiiiiiii-->
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2" th:text="${blog.getTitle()}"></h2>
+				    <div class="meta mb-3"><span class="date">Posted on</span><span class="time" th:text="${blog.getPostDate()}"></span>by <span class="comment"><a href="#" th:text="${blog.getAuthor()}"></a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://made4dev.com"><img class="img-fluid" th:src="@{${blog.getImg()}}" alt="image"></a>
+				    </figure>
+					<p th:text="${blog.getContent()}"></p>
+			    </div>
+		    </div><!--//container-->
+	    </article>
+	    
+		<!--------------XÓA CÁI NÀY ĐIIIIIIIIIIIIIIIIIII-->
+		<footer th:replace="/layout :: blogFooter"></footer>
+    
+    </div><!--//main-wrapper-->
+    
+
+    <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->
+
+    
+       
+    <!-- Javascript -->
+    
+
+</body>
+</html> 
+
